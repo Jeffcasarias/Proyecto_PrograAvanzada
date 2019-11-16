@@ -1,0 +1,5 @@
+C:\Users\usuario\Desktop\WebApi_Proyecto_Progra\DAL\bin\Debug\DAL.dll
+C:\Users\usuario\Desktop\WebApi_Proyecto_Progra\DAL\bin\Debug\DAL.pdb
+C:\Users\usuario\Desktop\WebApi_Proyecto_Progra\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\WebApi_Proyecto_Progra\DAL\obj\Debug\DAL.dll
+C:\Users\usuario\Desktop\WebApi_Proyecto_Progra\DAL\obj\Debug\DAL.pdb

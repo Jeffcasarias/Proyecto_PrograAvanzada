@@ -1,0 +1,7 @@
+C:\Users\usuario\Desktop\WebApi_Proyecto_Progra\BLL\bin\Debug\BLL.dll
+C:\Users\usuario\Desktop\WebApi_Proyecto_Progra\BLL\bin\Debug\BLL.pdb
+C:\Users\usuario\Desktop\WebApi_Proyecto_Progra\BLL\bin\Debug\DAL.dll
+C:\Users\usuario\Desktop\WebApi_Proyecto_Progra\BLL\bin\Debug\DAL.pdb
+C:\Users\usuario\Desktop\WebApi_Proyecto_Progra\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\WebApi_Proyecto_Progra\BLL\obj\Debug\BLL.dll
+C:\Users\usuario\Desktop\WebApi_Proyecto_Progra\BLL\obj\Debug\BLL.pdb
