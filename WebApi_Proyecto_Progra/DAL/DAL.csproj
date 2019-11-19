@@ -41,7 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BD\cls_BD_DAL.cs" />
+    <Compile Include="Mant\cls_Libros_DAL.cs" />
+    <Compile Include="Mant\cls_Musica_DAL.cs" />
+    <Compile Include="Mant\cls_Peliculas_DAL.cs" />
     <Compile Include="Mant\cls_Persona_DAL.cs" />
+    <Compile Include="Mant\cls_Usuario_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
