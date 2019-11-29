@@ -8,125 +8,24 @@ namespace DAL.Mant
 {
     public class cls_Peliculas_DAL
     {
-        private string _sIdPelicula, _sNombre, _sPrecio, _sGenero, _sAnioEstreno, _sIdiomas,
-            _sActores, _sArchivoDescargas, _sNumeroDescargas, _sIdConsecutivo, _sIdPrametro, _sIdEstado;
+        private int _iIdPelicula;
+        private string _sNombre, _sGenero, _sIdiomas, _sSinopsis;
+        private decimal _dPrecio;
+        private DateTime _dtAnioEstreno;
+        private Int16 _iNumeroDescargas;
+        private char _cIdEstado;
 
-        #region Variables Publicas
-
-        public string sActores
+        #region Variables publicas
+        public int iIdPelicula
         {
             get
             {
-                return _sActores;
+                return _iIdPelicula;
             }
 
             set
             {
-                _sActores = value;
-            }
-        }
-
-        public string sAnioEstreno
-        {
-            get
-            {
-                return _sAnioEstreno;
-            }
-
-            set
-            {
-                _sAnioEstreno = value;
-            }
-        }
-
-        public string sArchivoDescargas
-        {
-            get
-            {
-                return _sArchivoDescargas;
-            }
-
-            set
-            {
-                _sArchivoDescargas = value;
-            }
-        }
-
-        public string sGenero
-        {
-            get
-            {
-                return _sGenero;
-            }
-
-            set
-            {
-                _sGenero = value;
-            }
-        }
-
-        public string sIdConsecutivo
-        {
-            get
-            {
-                return _sIdConsecutivo;
-            }
-
-            set
-            {
-                _sIdConsecutivo = value;
-            }
-        }
-
-        public string sIdEstado
-        {
-            get
-            {
-                return _sIdEstado;
-            }
-
-            set
-            {
-                _sIdEstado = value;
-            }
-        }
-
-        public string sIdiomas
-        {
-            get
-            {
-                return _sIdiomas;
-            }
-
-            set
-            {
-                _sIdiomas = value;
-            }
-        }
-
-        public string sIdPelicula
-        {
-            get
-            {
-                return _sIdPelicula;
-            }
-
-            set
-            {
-                _sIdPelicula = value;
-            }
-        }
-
-        public string sIdPrametro
-        {
-            get
-            {
-                return _sIdPrametro;
-            }
-
-            set
-            {
-                _sIdPrametro = value;
+                _iIdPelicula = value;
             }
         }
 
@@ -143,32 +42,96 @@ namespace DAL.Mant
             }
         }
 
-        public string sNumeroDescargas
+        public string sGenero
         {
             get
             {
-                return _sNumeroDescargas;
+                return _sGenero;
             }
 
             set
             {
-                _sNumeroDescargas = value;
+                _sGenero = value;
             }
         }
 
-        public string sPrecio
+        public string sIdiomas
         {
             get
             {
-                return _sPrecio;
+                return _sIdiomas;
             }
 
             set
             {
-                _sPrecio = value;
+                _sIdiomas = value;
             }
         }
 
+        public string sSinopsis
+        {
+            get
+            {
+                return _sSinopsis;
+            }
+
+            set
+            {
+                _sSinopsis = value;
+            }
+        }
+
+        public decimal dPrecio
+        {
+            get
+            {
+                return _dPrecio;
+            }
+
+            set
+            {
+                _dPrecio = value;
+            }
+        }
+
+        public DateTime dtAnioEstreno
+        {
+            get
+            {
+                return _dtAnioEstreno;
+            }
+
+            set
+            {
+                _dtAnioEstreno = value;
+            }
+        }
+
+        public short iNumeroDescargas
+        {
+            get
+            {
+                return _iNumeroDescargas;
+            }
+
+            set
+            {
+                _iNumeroDescargas = value;
+            }
+        }
+
+        public char cIdEstado
+        {
+            get
+            {
+                return _cIdEstado;
+            }
+
+            set
+            {
+                _cIdEstado = value;
+            }
+        }
         #endregion
     }
 }

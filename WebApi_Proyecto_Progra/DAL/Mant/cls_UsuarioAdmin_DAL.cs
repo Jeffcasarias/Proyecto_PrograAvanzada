@@ -6,49 +6,62 @@ using System.Threading.Tasks;
 
 namespace DAL.Mant
 {
-    public class cls_Persona_DAL
+    public class cls_UsuarioAdmin_DAL
     {
-        private string  _sNombre, _sApellidos, _sCorreo;
+        private string _sIdAdmin, _sContrasena;
+        private char _cIdEstado, _cIdRol;
         private int _iIdPersona;
 
-        #region Variables pubicas
-
-        public string sNombre
+        #region Variables publicas
+        public string sIdAdmin
         {
             get
             {
-                return _sNombre;
+                return _sIdAdmin;
             }
 
             set
             {
-                _sNombre = value;
+                _sIdAdmin = value;
             }
         }
 
-        public string sApellidos
+        public string sContrasena
         {
             get
             {
-                return _sApellidos;
+                return _sContrasena;
             }
 
             set
             {
-                _sApellidos = value;
+                _sContrasena = value;
             }
         }
 
-        public string sCorreo
+        public char cIdEstado
         {
             get
             {
-                return _sCorreo;
+                return _cIdEstado;
             }
 
             set
             {
-                _sCorreo = value;
+                _cIdEstado = value;
+            }
+        }
+
+        public char cIdRol
+        {
+            get
+            {
+                return _cIdRol;
+            }
+
+            set
+            {
+                _cIdRol = value;
             }
         }
 

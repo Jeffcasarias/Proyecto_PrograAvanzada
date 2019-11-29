@@ -8,112 +8,24 @@ namespace DAL.Mant
 {
     public class cls_Libros_DAL
     {
-        private string _sIdLibro, _sNombre, _sPrecio, _sAutores, _sIdiomas,
-            _sAnioPublicacion, _sArchivoDescarga, _sNumeroDescargas, _sIdConsecutivo, _sIdParametro, _sIdEstado;
+        private int _iIdLibro;
+        private string _sNombre, _sAutores, _sIdiomas;
+        private decimal _dPrecio;
+        private DateTime _dtAnioPublicacion;
+        private Int16 _iNumeroDescargas;
+        private char _cIdEstado;
 
-        #region Variables Publicas
-
-        public string sAnioPublicacion
+        #region Variables publicas
+        public int iIdLibro
         {
             get
             {
-                return _sAnioPublicacion;
+                return _iIdLibro;
             }
 
             set
             {
-                _sAnioPublicacion = value;
-            }
-        }
-
-        public string sArchivoDescarga
-        {
-            get
-            {
-                return _sArchivoDescarga;
-            }
-
-            set
-            {
-                _sArchivoDescarga = value;
-            }
-        }
-
-        public string sAutores
-        {
-            get
-            {
-                return _sAutores;
-            }
-
-            set
-            {
-                _sAutores = value;
-            }
-        }
-
-        public string sIdConsecutivo
-        {
-            get
-            {
-                return _sIdConsecutivo;
-            }
-
-            set
-            {
-                _sIdConsecutivo = value;
-            }
-        }
-
-        public string sIdEstado
-        {
-            get
-            {
-                return _sIdEstado;
-            }
-
-            set
-            {
-                _sIdEstado = value;
-            }
-        }
-
-        public string sIdiomas
-        {
-            get
-            {
-                return _sIdiomas;
-            }
-
-            set
-            {
-                _sIdiomas = value;
-            }
-        }
-
-        public string sIdLibro
-        {
-            get
-            {
-                return _sIdLibro;
-            }
-
-            set
-            {
-                _sIdLibro = value;
-            }
-        }
-
-        public string sIdParametro
-        {
-            get
-            {
-                return _sIdParametro;
-            }
-
-            set
-            {
-                _sIdParametro = value;
+                _iIdLibro = value;
             }
         }
 
@@ -130,32 +42,83 @@ namespace DAL.Mant
             }
         }
 
-        public string sNumeroDescargas
+        public string sAutores
         {
             get
             {
-                return _sNumeroDescargas;
+                return _sAutores;
             }
 
             set
             {
-                _sNumeroDescargas = value;
+                _sAutores = value;
             }
         }
 
-        public string sPrecio
+        public string sIdiomas
         {
             get
             {
-                return _sPrecio;
+                return _sIdiomas;
             }
 
             set
             {
-                _sPrecio = value;
+                _sIdiomas = value;
             }
         }
 
+        public decimal dPrecio
+        {
+            get
+            {
+                return _dPrecio;
+            }
+
+            set
+            {
+                _dPrecio = value;
+            }
+        }
+
+        public DateTime dtAnioPublicacion
+        {
+            get
+            {
+                return _dtAnioPublicacion;
+            }
+
+            set
+            {
+                _dtAnioPublicacion = value;
+            }
+        }
+
+        public short iNumeroDescargas
+        {
+            get
+            {
+                return _iNumeroDescargas;
+            }
+
+            set
+            {
+                _iNumeroDescargas = value;
+            }
+        }
+
+        public char cIdEstado
+        {
+            get
+            {
+                return _cIdEstado;
+            }
+
+            set
+            {
+                _cIdEstado = value;
+            }
+        }
         #endregion
     }
 }

@@ -8,125 +8,24 @@ namespace DAL.Mant
 {
     public class cls_Musica_DAL
     {
-        private string _sIdMusica, _sNombre, _sPrecio, _sGenero, _sTipoInterpretacion,
-            _sIdioma, _sPais, _sDisquera, _sNombreDisco, _sAnioPublicacion, _sArchivoDescarga, _sNumeroDescargas, _sIdConsecutivo, _sIdParametro, _sIdEstado;
+        private int _iIdMusica;
+        private string _sNombre, _sGenero, _sPais, _sDisquera, _sNombreDisco;
+        private decimal _sPrecio;
+        private DateTime _dtAnioPublicacion;
+        private Int16 _iNumeroDescargas;
+        private char _cIdEstado;
 
-        #region Variables Publicas
-
-        public string sAnioPublicacion
+        #region Variables publicas
+        public int iIdMusica
         {
             get
             {
-                return _sAnioPublicacion;
+                return _iIdMusica;
             }
 
             set
             {
-                _sAnioPublicacion = value;
-            }
-        }
-
-        public string sArchivoDescarga
-        {
-            get
-            {
-                return _sArchivoDescarga;
-            }
-
-            set
-            {
-                _sArchivoDescarga = value;
-            }
-        }
-
-        public string sDisquera
-        {
-            get
-            {
-                return _sDisquera;
-            }
-
-            set
-            {
-                _sDisquera = value;
-            }
-        }
-
-        public string sGenero
-        {
-            get
-            {
-                return _sGenero;
-            }
-
-            set
-            {
-                _sGenero = value;
-            }
-        }
-
-        public string sIdConsecutivo
-        {
-            get
-            {
-                return _sIdConsecutivo;
-            }
-
-            set
-            {
-                _sIdConsecutivo = value;
-            }
-        }
-
-        public string sIdEstado
-        {
-            get
-            {
-                return _sIdEstado;
-            }
-
-            set
-            {
-                _sIdEstado = value;
-            }
-        }
-
-        public string sIdioma
-        {
-            get
-            {
-                return _sIdioma;
-            }
-
-            set
-            {
-                _sIdioma = value;
-            }
-        }
-
-        public string sIdMusica
-        {
-            get
-            {
-                return _sIdMusica;
-            }
-
-            set
-            {
-                _sIdMusica = value;
-            }
-        }
-
-        public string sIdParametro
-        {
-            get
-            {
-                return _sIdParametro;
-            }
-
-            set
-            {
-                _sIdParametro = value;
+                _iIdMusica = value;
             }
         }
 
@@ -143,29 +42,16 @@ namespace DAL.Mant
             }
         }
 
-        public string sNombreDisco
+        public string sGenero
         {
             get
             {
-                return _sNombreDisco;
+                return _sGenero;
             }
 
             set
             {
-                _sNombreDisco = value;
-            }
-        }
-
-        public string sNumeroDescargas
-        {
-            get
-            {
-                return _sNumeroDescargas;
-            }
-
-            set
-            {
-                _sNumeroDescargas = value;
+                _sGenero = value;
             }
         }
 
@@ -182,7 +68,33 @@ namespace DAL.Mant
             }
         }
 
-        public string sPrecio
+        public string sDisquera
+        {
+            get
+            {
+                return _sDisquera;
+            }
+
+            set
+            {
+                _sDisquera = value;
+            }
+        }
+
+        public string sNombreDisco
+        {
+            get
+            {
+                return _sNombreDisco;
+            }
+
+            set
+            {
+                _sNombreDisco = value;
+            }
+        }
+
+        public decimal sPrecio
         {
             get
             {
@@ -195,19 +107,44 @@ namespace DAL.Mant
             }
         }
 
-        public string sTipoInterpretacion
+        public DateTime dtAnioPublicacion
         {
             get
             {
-                return _sTipoInterpretacion;
+                return _dtAnioPublicacion;
             }
 
             set
             {
-                _sTipoInterpretacion = value;
+                _dtAnioPublicacion = value;
             }
         }
 
+        public short iNumeroDescargas
+        {
+            get
+            {
+                return _iNumeroDescargas;
+            }
+
+            set
+            {
+                _iNumeroDescargas = value;
+            }
+        }
+
+        public char cIdEstado
+        {
+            get
+            {
+                return _cIdEstado;
+            }
+
+            set
+            {
+                _cIdEstado = value;
+            }
+        }
         #endregion
     }
 }
