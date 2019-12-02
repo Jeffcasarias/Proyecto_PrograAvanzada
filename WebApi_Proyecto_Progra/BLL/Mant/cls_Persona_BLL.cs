@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using DAL.BD;
 using BLL.BD;
+using DAL.Mant;
 
 namespace BLL.Mant
 {
@@ -29,6 +30,32 @@ namespace BLL.Mant
             {
                 return null;
             }
+        }
+
+        public void Insertar_Persona(ref cls_Persona_DAL Obj_Persona_DAL)
+        {
+            cls_BD_BLL obj_BLL = new cls_BD_BLL();
+            cls_BD_DAL obj_DAL = new cls_BD_DAL();
+
+            obj_BLL.CrearParametros(ref obj_DAL);
+            obj_DAL.DT_Parametros.Rows.Add("@ID_PERSONA", SqlDbType.VarChar, Obj_Persona_DAL.IdpersonaPrueba.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@NOMBRE_PERSONA", SqlDbType.VarChar, Obj_Persona_DAL.sNombre.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@APELLIDO1", SqlDbType.VarChar, Obj_Persona_DAL.sApellidos.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@APELLIDO2", SqlDbType.VarChar, Obj_Persona_DAL.Apellido21.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@CORREO", SqlDbType.VarChar, Obj_Persona_DAL.sCorreo.ToString().Trim());
+
+
+            obj_DAL.sSP_Name = "dbo.SP_INSERTAR_PERSONA";
+            obj_BLL.Execute_NonQuery(ref obj_DAL);
+
+            //if (Obj_DAL.sMsjError == string.Empty)
+            //{
+            //    sMsjError = string.Empty;
+            //}
+            //else
+            //{
+            //    sMsjError = Obj_DAL.sMsjError;
+            //}
         }
     }
 }

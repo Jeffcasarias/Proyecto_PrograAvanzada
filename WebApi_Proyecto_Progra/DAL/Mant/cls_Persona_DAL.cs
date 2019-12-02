@@ -11,6 +11,9 @@ namespace DAL.Mant
         private string  _sNombre, _sApellidos, _sCorreo;
         private int _iIdPersona;
 
+        private string Apellido2, idpersonaPrueba;//Prueba
+
+
         #region Variables pubicas
 
         public string sNombre
@@ -62,6 +65,32 @@ namespace DAL.Mant
             set
             {
                 _iIdPersona = value;
+            }
+        }
+
+        public string Apellido21
+        {
+            get
+            {
+                return Apellido2;
+            }
+
+            set
+            {
+                Apellido2 = value;
+            }
+        }
+
+        public string IdpersonaPrueba
+        {
+            get
+            {
+                return idpersonaPrueba;
+            }
+
+            set
+            {
+                idpersonaPrueba = value;
             }
         }
         #endregion

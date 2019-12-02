@@ -70,13 +70,14 @@ namespace BLL.BD
 
                 //Ejecutar Stored Procedure
                 obj_BD_DAL.Obj_DAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-
-                        //DEFINICION DEL VALOR DEL PARAMETRO (VARIABLES)
-                        if (obj_BD_DAL.DT_Parametros != null)
+                //SE CREA UN DBTYPE PARA LUEGO ASIGNARLO JUNTO A LOS PARAMETROS DEL DATADAPTER
+                SqlDbType DBType;
+                //DEFINICION DEL VALOR DEL PARAMETRO (VARIABLES)
+                if (obj_BD_DAL.DT_Parametros != null)
                         {
                             foreach (DataRow DR in obj_BD_DAL.DT_Parametros.Rows)
                             {
-                                SqlDbType DBType = SqlDbType.VarChar;
+                        DBType = (SqlDbType) Enum.Parse (typeof(SqlDbType),DR[1].ToString().Trim());
 
                         obj_BD_DAL.Obj_DAdapter.SelectCommand.Parameters.Add(DR["Nombre"].ToString(), DBType).Value = DR["Valor"].ToString();
                             }
@@ -107,12 +108,13 @@ namespace BLL.BD
                         Obj_DB_DAL.Obj_Command = new SqlCommand(Obj_DB_DAL.sSP_Name, Obj_DB_DAL.Obj_Connec_DB);
 
                         Obj_DB_DAL.Obj_Command.CommandType = CommandType.StoredProcedure;
-
-                        if (Obj_DB_DAL.DT_Parametros != null)
+                SqlDbType DBType;
+                if (Obj_DB_DAL.DT_Parametros != null)
                         {
                             foreach (DataRow DR in Obj_DB_DAL.DT_Parametros.Rows)
                             {
-                                SqlDbType DBType = SqlDbType.VarChar;                                                          
+                        DBType = (SqlDbType)Enum.Parse(typeof(SqlDbType), DR[1].ToString().Trim());
+                                                                                 
 
                                 Obj_DB_DAL.Obj_Command.Parameters.Add(DR["Nombre"].ToString(), DBType).Value = DR["Valor"].ToString();
                             }

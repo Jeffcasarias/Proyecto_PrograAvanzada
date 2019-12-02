@@ -42,11 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BD\cls_BD_BLL.cs" />
+    <Compile Include="Mant\cls_Bitacora_BLL.cs" />
+    <Compile Include="Mant\cls_Factura_BLL.cs" />
     <Compile Include="Mant\cls_Libros_BLL.cs" />
     <Compile Include="Mant\cls_Musica_BLL.cs" />
     <Compile Include="Mant\cls_Peliculas_BLL.cs" />
     <Compile Include="Mant\cls_Persona_BLL.cs" />
-    <Compile Include="Mant\cls_Usuario_BLL.cs" />
+    <Compile Include="Mant\cls_UsuarioAdmin_BLL.cs" />
+    <Compile Include="Mant\cls_UsuarioCliente_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

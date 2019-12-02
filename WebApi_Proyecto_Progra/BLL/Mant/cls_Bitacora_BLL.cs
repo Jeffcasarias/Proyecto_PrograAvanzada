@@ -9,15 +9,15 @@ using BLL.BD;
 
 namespace BLL.Mant
 {
-    public class cls_Usuario_BLL
+    public class cls_Bitacora_BLL
     {
-        public DataTable Listar_Usuario()
+        public DataTable Listar_Bitacora()
         {
             cls_BD_BLL obj_BLL = new cls_BD_BLL();
             cls_BD_DAL obj_DAL = new cls_BD_DAL();
 
-            obj_DAL.sTableName = "Usuario";
-            obj_DAL.sSP_Name = "dbo.SP_LISTAR_USUARIO";
+            obj_DAL.sTableName = "Bitacora";
+            obj_DAL.sSP_Name = "dbo.SP_LISTAR_BITACORA";
             obj_BLL.Execute_DataAdapter(ref obj_DAL);
 
             if (obj_DAL.sMsjError == string.Empty)
