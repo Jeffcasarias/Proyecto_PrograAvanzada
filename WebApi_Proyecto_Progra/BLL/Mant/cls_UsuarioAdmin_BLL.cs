@@ -11,6 +11,8 @@ namespace BLL.Mant
 {
     public class cls_UsuarioAdmin_BLL
     {
+        string MsjError = string.Empty;
+
         public DataTable Listar_UsuarioAdmin()
         {
             cls_BD_BLL obj_BLL = new cls_BD_BLL();
@@ -20,7 +22,7 @@ namespace BLL.Mant
             obj_DAL.sSP_Name = "dbo.SP_LISTAR_USUARIO_ADMIN";
             obj_BLL.Execute_DataAdapter(ref obj_DAL);
 
-            if (obj_DAL.sMsjError == string.Empty)
+            if (MsjError == null)
             {
                 return obj_DAL.Obj_DSet.Tables[0];
             }

@@ -13,6 +13,8 @@ namespace BLL.BD
 {
     public class cls_BD_BLL
     {
+        string MsjError = string.Empty;
+
             //METODO DE CONECXION A LA BASE DE DATOS SQL SERVER
             public void CrearConx(ref cls_BD_DAL Obj_BD_DAL)
             {
@@ -31,7 +33,7 @@ namespace BLL.BD
                 }
             }
 
-        public void CerrarConx(ref cls_BD_DAL obj_BD_DAL)
+            public void CerrarConx(ref cls_BD_DAL obj_BD_DAL)
         {
             //CIERRE DE LA ENTRADA DE DATOS
             if (obj_BD_DAL.Obj_Connec_DB != null)
@@ -58,7 +60,7 @@ namespace BLL.BD
             }
 
             //METODO EJECUTABLE DE LAS ACCIONES DE LISTAR Y FILTRAR
-            public void Execute_DataAdapter(ref cls_BD_DAL obj_BD_DAL)
+            public string Execute_DataAdapter(ref cls_BD_DAL obj_BD_DAL)
             {
                 try
                 {
@@ -85,21 +87,22 @@ namespace BLL.BD
                 obj_BD_DAL.Obj_DSet = new DataSet();
                 obj_BD_DAL.Obj_DAdapter.Fill(obj_BD_DAL.Obj_DSet, obj_BD_DAL.sTableName);
 
-                obj_BD_DAL.sMsjError = string.Empty;                    
+               MsjError = null;                    
 
                 }
                 catch (Exception error)
                 {
-                obj_BD_DAL.sMsjError = error.Message.ToString();
+                MsjError = error.Message.ToString();
                 }
                 finally
                 {
                 CerrarConx(ref obj_BD_DAL);
                 }
+            return MsjError;
             }
 
             //METODO EJECUTABLE DE LAS ACCIONES DE INSERTAR, ELIMINAR Y MODIFICAR
-            public void Execute_NonQuery(ref cls_BD_DAL Obj_DB_DAL)
+            public string Execute_NonQuery(ref cls_BD_DAL Obj_DB_DAL)
             {
                 try
                 {
@@ -123,10 +126,10 @@ namespace BLL.BD
                         Obj_DB_DAL.Obj_Command.ExecuteNonQuery();
 
                         Obj_DB_DAL.sMsjError = string.Empty;
-                    
 
-                    Obj_DB_DAL.sMsjError = string.Empty;
-                }
+
+                MsjError = null;
+            }
                 catch (Exception error)
                 {
                     Obj_DB_DAL.sMsjError = error.Message.ToString();
@@ -135,6 +138,7 @@ namespace BLL.BD
                 {
                 CerrarConx(ref Obj_DB_DAL);
                 }
+            return MsjError;
             }
             
         }

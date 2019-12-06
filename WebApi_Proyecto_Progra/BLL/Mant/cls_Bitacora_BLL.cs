@@ -11,6 +11,8 @@ namespace BLL.Mant
 {
     public class cls_Bitacora_BLL
     {
+        string MsjError = string.Empty;
+
         public DataTable Listar_Bitacora()
         {
             cls_BD_BLL obj_BLL = new cls_BD_BLL();
@@ -18,9 +20,9 @@ namespace BLL.Mant
 
             obj_DAL.sTableName = "Bitacora";
             obj_DAL.sSP_Name = "dbo.SP_LISTAR_BITACORA";
-            obj_BLL.Execute_DataAdapter(ref obj_DAL);
+            MsjError = obj_BLL.Execute_DataAdapter(ref obj_DAL);
 
-            if (obj_DAL.sMsjError == string.Empty)
+            if (MsjError == null)
             {
                 return obj_DAL.Obj_DSet.Tables[0];
             }

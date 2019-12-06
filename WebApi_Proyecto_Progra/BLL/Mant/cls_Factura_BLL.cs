@@ -11,6 +11,8 @@ namespace BLL.Mant
 {
     public class cls_Factura_BLL
     {
+        string MsjError = string.Empty;
+
         public DataTable Listar_Factura()
         {
             cls_BD_BLL obj_BLL = new cls_BD_BLL();
@@ -20,7 +22,7 @@ namespace BLL.Mant
             obj_DAL.sSP_Name = "dbo.SP_LISTAR_FACTURA";
             obj_BLL.Execute_DataAdapter(ref obj_DAL);
 
-            if (obj_DAL.sMsjError == string.Empty)
+            if (MsjError == null)
             {
                 return obj_DAL.Obj_DSet.Tables[0];
             }
@@ -28,6 +30,7 @@ namespace BLL.Mant
             {
                 return null;
             }
+        
         }
     }
 }

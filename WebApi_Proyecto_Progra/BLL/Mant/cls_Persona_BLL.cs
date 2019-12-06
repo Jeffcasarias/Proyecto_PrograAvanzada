@@ -11,7 +11,8 @@ using DAL.Mant;
 namespace BLL.Mant
 {
     public class cls_Persona_BLL
-    {       
+    {
+        string MsjError = string.Empty;
 
         public DataTable Listar_Persona()
         {
@@ -22,7 +23,7 @@ namespace BLL.Mant
             obj_DAL.sSP_Name = "dbo.SP_LISTAR_PERSONA";
             obj_BLL.Execute_DataAdapter(ref obj_DAL);
 
-            if (obj_DAL.sMsjError == string.Empty)
+            if (MsjError == null)
             {
                 return obj_DAL.Obj_DSet.Tables[0];
             }
@@ -32,7 +33,7 @@ namespace BLL.Mant
             }
         }
 
-        public void Insertar_Persona(ref cls_Persona_DAL Obj_Persona_DAL)
+        public string Insertar_Persona(ref cls_Persona_DAL Obj_Persona_DAL)
         {
             cls_BD_BLL obj_BLL = new cls_BD_BLL();
             cls_BD_DAL obj_DAL = new cls_BD_DAL();
@@ -46,16 +47,9 @@ namespace BLL.Mant
 
 
             obj_DAL.sSP_Name = "dbo.SP_INSERTAR_PERSONA";
-            obj_BLL.Execute_NonQuery(ref obj_DAL);
-
-            //if (Obj_DAL.sMsjError == string.Empty)
-            //{
-            //    sMsjError = string.Empty;
-            //}
-            //else
-            //{
-            //    sMsjError = Obj_DAL.sMsjError;
-            //}
+            MsjError = obj_BLL.Execute_NonQuery(ref obj_DAL);
+                        
+            return MsjError;            
         }
     }
 }
