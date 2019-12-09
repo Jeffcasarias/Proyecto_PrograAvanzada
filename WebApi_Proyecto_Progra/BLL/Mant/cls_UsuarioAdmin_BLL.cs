@@ -32,20 +32,20 @@ namespace BLL.Mant
                 return null;
             }
         }
-        public string Insertar_UsuarioAdmin(ref cls_Persona_DAL Obj_Persona_DAL)
+        public string Insertar_UsuarioAdmin(ref cls_UsuarioAdmin_DAL Obj_UsuarioAdmin_DAL)
         {
             cls_BD_BLL obj_BLL = new cls_BD_BLL();
             cls_BD_DAL obj_DAL = new cls_BD_DAL();
 
             obj_BLL.CrearParametros(ref obj_DAL);
-            obj_DAL.DT_Parametros.Rows.Add("@ID_PERSONA", SqlDbType.VarChar, Obj_Persona_DAL.IdpersonaPrueba.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@NOMBRE_PERSONA", SqlDbType.VarChar, Obj_Persona_DAL.sNombre.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@APELLIDO1", SqlDbType.VarChar, Obj_Persona_DAL.sApellidos.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@APELLIDO2", SqlDbType.VarChar, Obj_Persona_DAL.Apellido21.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@CORREO", SqlDbType.VarChar, Obj_Persona_DAL.sCorreo.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ID_ADMIN", SqlDbType.VarChar, Obj_UsuarioAdmin_DAL.sIdAdmin.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@CONTRASENA", SqlDbType.VarChar, Obj_UsuarioAdmin_DAL.sContrasena.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ID_ESTADO", SqlDbType.Char, Obj_UsuarioAdmin_DAL.cIdEstado.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ID_PERSONA", SqlDbType.Int, Obj_UsuarioAdmin_DAL.iIdPersona.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ID_ROL", SqlDbType.Char, Obj_UsuarioAdmin_DAL.cIdRol.ToString().Trim());
 
 
-            obj_DAL.sSP_Name = "dbo.SP_InsertarPersona";
+            obj_DAL.sSP_Name = "dbo.SP_InsertarAdmin";
             MsjError = obj_BLL.Execute_NonQuery(ref obj_DAL);
 
             return MsjError;

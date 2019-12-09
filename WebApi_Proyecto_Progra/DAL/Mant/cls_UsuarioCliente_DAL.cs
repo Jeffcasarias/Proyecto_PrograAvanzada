@@ -11,7 +11,7 @@ namespace DAL.Mant
         private string _sIdUsuario, _sContrasena;
         private char _cIdEstado, _cIdRol;
         private Int16 _iIdMetodoPago;
-        private int _iIdPersona;
+        private int _iIdPersona, _iNumTarjeta;
 
         #region Variables publicas
 
@@ -92,7 +92,20 @@ namespace DAL.Mant
                 _iIdPersona = value;
             }
         }
-        #endregion 
+
+        public int iNumTarjeta
+        {
+            get
+            {
+                return _iNumTarjeta;
+            }
+
+            set
+            {
+                _iNumTarjeta = value;
+            }
+        }
+        #endregion
     }
 
 }

@@ -33,20 +33,20 @@ namespace BLL.Mant
             }
         
         }
-        public string Insertar_Factura(ref cls_Persona_DAL Obj_Persona_DAL)
+        public string Insertar_Factura(ref cls_Factura_DAL Obj_Factura_DAL)
         {
             cls_BD_BLL obj_BLL = new cls_BD_BLL();
             cls_BD_DAL obj_DAL = new cls_BD_DAL();
 
             obj_BLL.CrearParametros(ref obj_DAL);
-            obj_DAL.DT_Parametros.Rows.Add("@ID_PERSONA", SqlDbType.VarChar, Obj_Persona_DAL.IdpersonaPrueba.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@NOMBRE_PERSONA", SqlDbType.VarChar, Obj_Persona_DAL.sNombre.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@APELLIDO1", SqlDbType.VarChar, Obj_Persona_DAL.sApellidos.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@APELLIDO2", SqlDbType.VarChar, Obj_Persona_DAL.Apellido21.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@CORREO", SqlDbType.VarChar, Obj_Persona_DAL.sCorreo.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ID_FACTURA", SqlDbType.Int, Obj_Factura_DAL.iIdFactura.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ID_MUSICA", SqlDbType.Int, Obj_Factura_DAL.iIdMusica.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ID_LIBRO", SqlDbType.Int, Obj_Factura_DAL.iIdLibro.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ID_PELICULA", SqlDbType.Int, Obj_Factura_DAL.iIdPelicula.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@MONTO", SqlDbType.Money, Obj_Factura_DAL.dMonto.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ID_USUARIO", SqlDbType.VarChar, Obj_Factura_DAL.sIdUsuario.ToString().Trim());
 
-
-            obj_DAL.sSP_Name = "dbo.SP_InsertarPersona";
+            obj_DAL.sSP_Name = "dbo.SP_InsertarFactura";
             MsjError = obj_BLL.Execute_NonQuery(ref obj_DAL);
 
             return MsjError;

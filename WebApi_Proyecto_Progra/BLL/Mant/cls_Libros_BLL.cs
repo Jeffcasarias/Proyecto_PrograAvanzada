@@ -32,20 +32,23 @@ namespace BLL.Mant
                 return null;
             }
         }
-        public string Insertar_Libro(ref cls_Persona_DAL Obj_Persona_DAL)
+        public string Insertar_Libro(ref cls_Libros_DAL Obj_Libros_DAL)
         {
             cls_BD_BLL obj_BLL = new cls_BD_BLL();
             cls_BD_DAL obj_DAL = new cls_BD_DAL();
 
             obj_BLL.CrearParametros(ref obj_DAL);
-            obj_DAL.DT_Parametros.Rows.Add("@ID_PERSONA", SqlDbType.VarChar, Obj_Persona_DAL.IdpersonaPrueba.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@NOMBRE_PERSONA", SqlDbType.VarChar, Obj_Persona_DAL.sNombre.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@APELLIDO1", SqlDbType.VarChar, Obj_Persona_DAL.sApellidos.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@APELLIDO2", SqlDbType.VarChar, Obj_Persona_DAL.Apellido21.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@CORREO", SqlDbType.VarChar, Obj_Persona_DAL.sCorreo.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@NOMBRE", SqlDbType.VarChar, Obj_Libros_DAL.sNombre.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@PRECIO", SqlDbType.Money, Obj_Libros_DAL.dPrecio.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@AUTORES", SqlDbType.VarChar, Obj_Libros_DAL.sAutores.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@IDIOMAS", SqlDbType.VarChar, Obj_Libros_DAL.sIdiomas.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ANIO_PUBLICACION", SqlDbType.DateTime, Obj_Libros_DAL.dtAnioPublicacion.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@NUMERO_DESCARGAS", SqlDbType.SmallInt, Obj_Libros_DAL.iNumeroDescargas.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ID_ESTADO", SqlDbType.Char, Obj_Libros_DAL.cIdEstado.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ID_GENERO", SqlDbType.SmallInt, Obj_Libros_DAL.iIdGenero.ToString().Trim());
 
 
-            obj_DAL.sSP_Name = "dbo.SP_InsertarPersona";
+            obj_DAL.sSP_Name = "dbo.SP_InsertarLibro";
             MsjError = obj_BLL.Execute_NonQuery(ref obj_DAL);
 
             return MsjError;

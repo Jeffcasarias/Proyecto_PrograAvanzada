@@ -39,11 +39,10 @@ namespace BLL.Mant
             cls_BD_DAL obj_DAL = new cls_BD_DAL();
 
             obj_BLL.CrearParametros(ref obj_DAL);
-            obj_DAL.DT_Parametros.Rows.Add("@ID_PERSONA", SqlDbType.VarChar, Obj_Persona_DAL.IdpersonaPrueba.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@NOMBRE_PERSONA", SqlDbType.VarChar, Obj_Persona_DAL.sNombre.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@APELLIDO1", SqlDbType.VarChar, Obj_Persona_DAL.sApellidos.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@APELLIDO2", SqlDbType.VarChar, Obj_Persona_DAL.Apellido21.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@CORREO", SqlDbType.VarChar, Obj_Persona_DAL.sCorreo.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ID_PERSONA", SqlDbType.Int, Obj_Persona_DAL.IdpersonaPrueba.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@NOMBRE", SqlDbType.NVarChar, Obj_Persona_DAL.sNombre.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@APELLIDOS", SqlDbType.NVarChar, Obj_Persona_DAL.sApellidos.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@CORREO", SqlDbType.NVarChar, Obj_Persona_DAL.sCorreo.ToString().Trim());
 
 
             obj_DAL.sSP_Name = "dbo.SP_InsertarPersona";

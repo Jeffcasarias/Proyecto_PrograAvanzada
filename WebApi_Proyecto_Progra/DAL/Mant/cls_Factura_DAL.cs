@@ -8,7 +8,7 @@ namespace DAL.Mant
 {
     public class cls_Factura_DAL
     {
-        private int _iIdFactura, _iIdMusica, _iIdLibro;
+        private int _iIdFactura, _iIdMusica, _iIdLibro, _iIdPelicula;
         private decimal _dMonto;
         private string _sIdUsuario;
 
@@ -75,6 +75,19 @@ namespace DAL.Mant
             set
             {
                 _sIdUsuario = value;
+            }
+        }
+
+        public int iIdPelicula
+        {
+            get
+            {
+                return _iIdPelicula;
+            }
+
+            set
+            {
+                _iIdPelicula = value;
             }
         }
         #endregion

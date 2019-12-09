@@ -12,7 +12,7 @@ namespace DAL.Mant
         private string _sNombre, _sAutores, _sIdiomas;
         private decimal _dPrecio;
         private DateTime _dtAnioPublicacion;
-        private Int16 _iNumeroDescargas;
+        private Int16 _iNumeroDescargas, _iIdGenero;
         private char _cIdEstado;
 
         #region Variables publicas
@@ -117,6 +117,19 @@ namespace DAL.Mant
             set
             {
                 _cIdEstado = value;
+            }
+        }
+
+        public short iIdGenero
+        {
+            get
+            {
+                return _iIdGenero;
+            }
+
+            set
+            {
+                _iIdGenero = value;
             }
         }
         #endregion
