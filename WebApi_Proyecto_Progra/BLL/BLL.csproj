@@ -48,6 +48,7 @@
     <Compile Include="Mant\cls_Musica_BLL.cs" />
     <Compile Include="Mant\cls_Peliculas_BLL.cs" />
     <Compile Include="Mant\cls_Persona_BLL.cs" />
+    <Compile Include="Mant\cls_Transaccion_BLL.cs" />
     <Compile Include="Mant\cls_UsuarioAdmin_BLL.cs" />
     <Compile Include="Mant\cls_UsuarioCliente_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

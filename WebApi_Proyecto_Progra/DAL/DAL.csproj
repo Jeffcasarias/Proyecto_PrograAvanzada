@@ -47,6 +47,7 @@
     <Compile Include="Mant\cls_Musica_DAL.cs" />
     <Compile Include="Mant\cls_Peliculas_DAL.cs" />
     <Compile Include="Mant\cls_Persona_DAL.cs" />
+    <Compile Include="Mant\cls_Transaccion_DAL.cs" />
     <Compile Include="Mant\cls_UsuarioAdmin_DAL.cs" />
     <Compile Include="Mant\cls_UsuarioCliente_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

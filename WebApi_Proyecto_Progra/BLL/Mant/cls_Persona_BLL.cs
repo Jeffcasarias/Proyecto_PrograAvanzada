@@ -20,7 +20,7 @@ namespace BLL.Mant
             cls_BD_DAL obj_DAL = new cls_BD_DAL();
 
             obj_DAL.sTableName = "Persona";
-            obj_DAL.sSP_Name = "dbo.SP_LISTAR_PERSONA";
+            obj_DAL.sSP_Name = "dbo.SP_ListarPersona";
             obj_BLL.Execute_DataAdapter(ref obj_DAL);
 
             if (MsjError == null)
@@ -46,7 +46,7 @@ namespace BLL.Mant
             obj_DAL.DT_Parametros.Rows.Add("@CORREO", SqlDbType.VarChar, Obj_Persona_DAL.sCorreo.ToString().Trim());
 
 
-            obj_DAL.sSP_Name = "dbo.SP_INSERTAR_PERSONA";
+            obj_DAL.sSP_Name = "dbo.SP_InsertarPersona";
             MsjError = obj_BLL.Execute_NonQuery(ref obj_DAL);
                         
             return MsjError;            

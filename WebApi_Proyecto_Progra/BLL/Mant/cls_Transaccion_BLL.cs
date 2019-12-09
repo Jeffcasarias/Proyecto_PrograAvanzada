@@ -10,18 +10,18 @@ using DAL.Mant;
 
 namespace BLL.Mant
 {
-    public class cls_UsuarioCliente_BLL
+    public class cls_Transaccion_BLL
     {
         string MsjError = string.Empty;
 
-        public DataTable Listar_UsuarioCliente()
+        public DataTable Listar_Bitacora()
         {
             cls_BD_BLL obj_BLL = new cls_BD_BLL();
             cls_BD_DAL obj_DAL = new cls_BD_DAL();
 
-            obj_DAL.sTableName = "Usuario Cliente";
-            obj_DAL.sSP_Name = "dbo.SP_ListarUsuario";
-            obj_BLL.Execute_DataAdapter(ref obj_DAL);
+            obj_DAL.sTableName = "Transaccion";
+            obj_DAL.sSP_Name = "dbo.SP_ListarTransaccion";
+            MsjError = obj_BLL.Execute_DataAdapter(ref obj_DAL);
 
             if (MsjError == null)
             {
@@ -32,7 +32,7 @@ namespace BLL.Mant
                 return null;
             }
         }
-        public string Insertar_UsuarioCliente(ref cls_Persona_DAL Obj_Persona_DAL)
+        public string Insertar_Bitacora(ref cls_Persona_DAL Obj_Persona_DAL)
         {
             cls_BD_BLL obj_BLL = new cls_BD_BLL();
             cls_BD_DAL obj_DAL = new cls_BD_DAL();
