@@ -4,15 +4,20 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using BLL.Mant;
+using DAL.Mant;
+using Newtonsoft.Json;
 
 namespace WebApi_Proyecto_Progra.Controllers.Mant
 {
     public class UsuarioClienteController : ApiController
     {
+        cls_UsuarioCliente_BLL obj_BLL = new cls_UsuarioCliente_BLL();
+        cls_UsuarioCliente_DAL obj_DAL = new cls_UsuarioCliente_DAL();
         // GET: api/UsuarioCliente
-        public IEnumerable<string> Get()
+        public string Get()
         {
-            return new string[] { "value1", "value2" };
+            return JsonConvert.SerializeObject(obj_BLL.Listar_UsuarioCliente(), Formatting.Indented);
         }
 
         // GET: api/UsuarioCliente/5
