@@ -21,7 +21,7 @@ namespace BLL.Mant
 
             obj_DAL.sTableName = "Libros";
             obj_DAL.sSP_Name = "dbo.SP_ListarLibros";
-            obj_BLL.Execute_DataAdapter(ref obj_DAL);
+            MsjError = obj_BLL.Execute_DataAdapter(ref obj_DAL);
 
             if (MsjError == null)
             {
@@ -39,16 +39,39 @@ namespace BLL.Mant
 
             obj_BLL.CrearParametros(ref obj_DAL);
             obj_DAL.DT_Parametros.Rows.Add("@NOMBRE", SqlDbType.VarChar, Obj_Libros_DAL.sNombre.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@PRECIO", SqlDbType.Money, Obj_Libros_DAL.dPrecio.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@PRECIO", SqlDbType.Money, Obj_Libros_DAL.dPrecio);
             obj_DAL.DT_Parametros.Rows.Add("@AUTORES", SqlDbType.VarChar, Obj_Libros_DAL.sAutores.ToString().Trim());
             obj_DAL.DT_Parametros.Rows.Add("@IDIOMAS", SqlDbType.VarChar, Obj_Libros_DAL.sIdiomas.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@ANIO_PUBLICACION", SqlDbType.DateTime, Obj_Libros_DAL.dtAnioPublicacion.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@NUMERO_DESCARGAS", SqlDbType.SmallInt, Obj_Libros_DAL.iNumeroDescargas.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@ID_ESTADO", SqlDbType.Char, Obj_Libros_DAL.cIdEstado.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@ID_GENERO", SqlDbType.SmallInt, Obj_Libros_DAL.iIdGenero.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ANIO_PUBLICACION", SqlDbType.DateTime, Obj_Libros_DAL.dtAnioPublicacion);
+            obj_DAL.DT_Parametros.Rows.Add("@NUMERO_DESCARGAS", SqlDbType.SmallInt, Obj_Libros_DAL.iNumeroDescargas);
+            obj_DAL.DT_Parametros.Rows.Add("@ID_ESTADO", SqlDbType.Char, Obj_Libros_DAL.cIdEstado);
+            obj_DAL.DT_Parametros.Rows.Add("@ID_GENERO", SqlDbType.SmallInt, Obj_Libros_DAL.iIdGenero);
 
 
             obj_DAL.sSP_Name = "dbo.SP_InsertarLibro";
+            MsjError = obj_BLL.Execute_NonQuery(ref obj_DAL);
+
+            return MsjError;
+        }
+
+        public string Mdificar_Libro(ref cls_Libros_DAL Obj_Libros_DAL)
+        {
+            cls_BD_BLL obj_BLL = new cls_BD_BLL();
+            cls_BD_DAL obj_DAL = new cls_BD_DAL();
+
+            obj_BLL.CrearParametros(ref obj_DAL);
+            obj_DAL.DT_Parametros.Rows.Add("@ID_LIBRO", SqlDbType.Int, Obj_Libros_DAL.iIdLibro);
+            obj_DAL.DT_Parametros.Rows.Add("@NOMBRE", SqlDbType.VarChar, Obj_Libros_DAL.sNombre.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@PRECIO", SqlDbType.Money, Obj_Libros_DAL.dPrecio);
+            obj_DAL.DT_Parametros.Rows.Add("@AUTORES", SqlDbType.VarChar, Obj_Libros_DAL.sAutores.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@IDIOMAS", SqlDbType.VarChar, Obj_Libros_DAL.sIdiomas.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ANIO_PUBLICACION", SqlDbType.DateTime, Obj_Libros_DAL.dtAnioPublicacion);
+            obj_DAL.DT_Parametros.Rows.Add("@NUMERO_DESCARGAS", SqlDbType.SmallInt, Obj_Libros_DAL.iNumeroDescargas);
+            obj_DAL.DT_Parametros.Rows.Add("@ID_ESTADO", SqlDbType.Char, Obj_Libros_DAL.cIdEstado);
+            obj_DAL.DT_Parametros.Rows.Add("@ID_GENERO", SqlDbType.SmallInt, Obj_Libros_DAL.iIdGenero);
+
+
+            obj_DAL.sSP_Name = "dbo.SP_ModificarLibro";
             MsjError = obj_BLL.Execute_NonQuery(ref obj_DAL);
 
             return MsjError;

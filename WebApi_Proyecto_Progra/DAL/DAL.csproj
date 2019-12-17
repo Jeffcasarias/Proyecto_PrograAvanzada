@@ -42,11 +42,15 @@
   <ItemGroup>
     <Compile Include="BD\cls_BD_DAL.cs" />
     <Compile Include="Mant\cls_Bitacora_DAL.cs" />
+    <Compile Include="Mant\cls_Estados_DAL.cs" />
     <Compile Include="Mant\cls_Factura_DAL.cs" />
+    <Compile Include="Mant\cls_Genero_DAL.cs" />
     <Compile Include="Mant\cls_Libros_DAL.cs" />
+    <Compile Include="Mant\cls_MetodoPago_DAL.cs" />
     <Compile Include="Mant\cls_Musica_DAL.cs" />
     <Compile Include="Mant\cls_Peliculas_DAL.cs" />
     <Compile Include="Mant\cls_Persona_DAL.cs" />
+    <Compile Include="Mant\cls_Rol_DAL.cs" />
     <Compile Include="Mant\cls_Transaccion_DAL.cs" />
     <Compile Include="Mant\cls_UsuarioAdmin_DAL.cs" />
     <Compile Include="Mant\cls_UsuarioCliente_DAL.cs" />

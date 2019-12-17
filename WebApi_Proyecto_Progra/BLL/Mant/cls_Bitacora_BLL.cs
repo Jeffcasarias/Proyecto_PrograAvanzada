@@ -38,11 +38,11 @@ namespace BLL.Mant
             cls_BD_DAL obj_DAL = new cls_BD_DAL();
 
             obj_BLL.CrearParametros(ref obj_DAL);
-            obj_DAL.DT_Parametros.Rows.Add("@ID_BITACORA", SqlDbType.SmallInt, Obj_Bitacora_DAL.iIdBitacora.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@FECHA_BITACORA", SqlDbType.DateTime, Obj_Bitacora_DAL.dtFechaBitacora.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ID_BITACORA", SqlDbType.SmallInt, Obj_Bitacora_DAL.iIdBitacora);
+            obj_DAL.DT_Parametros.Rows.Add("@FECHA_BITACORA", SqlDbType.DateTime, Obj_Bitacora_DAL.dtFechaBitacora);
             obj_DAL.DT_Parametros.Rows.Add("@DESCRIPCION", SqlDbType.VarChar, Obj_Bitacora_DAL.sDescripcion.ToString().Trim());
             obj_DAL.DT_Parametros.Rows.Add("@ID_ADMIN", SqlDbType.VarChar, Obj_Bitacora_DAL.sIdAdmin.ToString().Trim());
-            obj_DAL.DT_Parametros.Rows.Add("@ID_ESTADO", SqlDbType.Char, Obj_Bitacora_DAL.cIdEstado.ToString().Trim());
+            obj_DAL.DT_Parametros.Rows.Add("@ID_ESTADO", SqlDbType.Char, Obj_Bitacora_DAL.cIdEstado);
 
 
             obj_DAL.sSP_Name = "dbo.SP_InsertarBitacora";

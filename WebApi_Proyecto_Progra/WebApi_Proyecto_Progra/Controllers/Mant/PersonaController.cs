@@ -7,6 +7,7 @@ using System.Web.Http;
 using System.Data;
 using BLL.Mant;
 using DAL.Mant;
+using Newtonsoft.Json;
 
 namespace WebApi_Proyecto_Progra.Controllers.Mant
 {
@@ -16,9 +17,9 @@ namespace WebApi_Proyecto_Progra.Controllers.Mant
         cls_Persona_DAL obj_DAL = new cls_Persona_DAL();
 
         // GET: api/Persona
-        public DataTable Get()
+        public string Get()
         {
-            return obj_BLL.Listar_Persona();
+            return JsonConvert.SerializeObject(obj_BLL.Listar_Persona(), Formatting.Indented);
         }
 
         // GET: api/Persona/5
@@ -28,20 +29,25 @@ namespace WebApi_Proyecto_Progra.Controllers.Mant
         }
 
         // POST: api/Persona
-        public void Post(string IdPersona, string Nombre, string apellido1, string apellido2, string correo)
+        public void Post(string IdPersona, string Nombre, string apellidos, string correo)
         {
-            obj_DAL.IdpersonaPrueba = IdPersona;
+            obj_DAL.iIdPersona = Convert.ToInt32(IdPersona);
             obj_DAL.sNombre = Nombre;
-            obj_DAL.sApellidos = apellido1;
-            obj_DAL.Apellido21 = apellido2;
+            obj_DAL.sApellidos = apellidos;
             obj_DAL.sCorreo = correo;
 
             obj_BLL.Insertar_Persona(ref obj_DAL);
         }
 
         // PUT: api/Persona/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(string IdPersona, string Nombre, string apellidos, string correo)
         {
+            obj_DAL.iIdPersona = Convert.ToInt32(IdPersona);
+            obj_DAL.sNombre = Nombre;
+            obj_DAL.sApellidos = apellidos;
+            obj_DAL.sCorreo = correo;
+
+            obj_BLL.Modificar_Persona(ref obj_DAL);
         }
 
         // DELETE: api/Persona/5
