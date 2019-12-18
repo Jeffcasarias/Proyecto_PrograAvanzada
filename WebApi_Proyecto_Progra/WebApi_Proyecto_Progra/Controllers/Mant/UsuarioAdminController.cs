@@ -27,13 +27,27 @@ namespace WebApi_Proyecto_Progra.Controllers.Mant
         }
 
         // POST: api/UsuarioAdmin
-        public void Post([FromBody]string value)
+        public void Post(string IdUsuario, string Contrasena, string IdEstado, string IdPersona, string IdRol)
         {
+            obj_DAL.sIdAdmin = IdUsuario;
+            obj_DAL.sContrasena = Contrasena;
+            obj_DAL.cIdEstado = Convert.ToChar(IdEstado);
+            obj_DAL.iIdPersona = Convert.ToInt32(IdPersona);
+            obj_DAL.cIdRol = Convert.ToChar(IdRol);
+
+            obj_BLL.Insertar_UsuarioAdmin(ref obj_DAL);
         }
 
         // PUT: api/UsuarioAdmin/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(string IdUsuario, string Contrasena, string IdEstado, string IdPersona, string IdRol)
         {
+            obj_DAL.sIdAdmin = IdUsuario;
+            obj_DAL.sContrasena = Contrasena;
+            obj_DAL.cIdEstado = Convert.ToChar(IdEstado);
+            obj_DAL.iIdPersona = Convert.ToInt32(IdPersona);
+            obj_DAL.cIdRol = Convert.ToChar(IdRol);
+
+            obj_BLL.Modificar_UsuarioAdmin(ref obj_DAL);
         }
 
         // DELETE: api/UsuarioAdmin/5

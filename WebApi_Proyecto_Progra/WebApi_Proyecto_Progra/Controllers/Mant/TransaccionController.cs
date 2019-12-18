@@ -27,8 +27,13 @@ namespace WebApi_Proyecto_Progra.Controllers.Mant
         }
 
         // POST: api/Transaccion
-        public void Post([FromBody]string value)
+        public void Post(string IdTransaccion, string FechaTransaccion, string IdFactura)
         {
+            obj_DAL.iIdTransaccion = Convert.ToInt32(IdTransaccion);
+            obj_DAL.dtFechaTransaccion = Convert.ToDateTime(FechaTransaccion);
+            obj_DAL.iIdFactura = Convert.ToInt32(IdFactura);
+
+            obj_BLL.Insertar_Transaccion(ref obj_DAL);
         }
 
         // PUT: api/Transaccion/5
