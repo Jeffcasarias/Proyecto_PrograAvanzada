@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BD\cls_BD_BLL.cs" />
+    <Compile Include="Login\cls_Login_BLL.cs" />
     <Compile Include="Mant\cls_Bitacora_BLL.cs" />
     <Compile Include="Mant\cls_Estados_BLL.cs" />
     <Compile Include="Mant\cls_Factura_BLL.cs" />
